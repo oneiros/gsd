@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GSD - Getting Stuff Done</title>
+    <script src="/javascripts/application.js"></script>
+    <link rel="stylesheet" href="/stylesheets/application.css">
+  </head>
+
+  <body>
+    <nav>
+      <a href="/" class="brand">GSD</a>
+      <input id="bmenub" type="checkbox" class="show">
+      <label for="bmenub" class="burger pseudo button">menu</label>
+      <div class="menu">
+        <a href="/" class="pseudo button">ToDos</a>
+      </div>
+    </nav>
+    <main>
+      <% if @notification %>
+        <div class="alert notification card">
+          <header>
+            <span><%= @notification %></span>
+            <a href="#">&times;</a>
+          </header>
+        </div>
+      <% end %>
+      <% if @error %>
+        <div class="alert error card">
+          <header>
+            <span><%= @error %></span>
+            <a href="#">&times;</a>
+          </header>
+        </div>
+      <% end %>
+      <%= yield %>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+@import "~picnic/src/picnic"; 
+
+main {
+  padding-top: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+table.tasks {
+  width: 100%;
+
+  .task-description {
+    display: none;
+  }
+}
+
+td.actions {
+  text-align: right;
+}
+
+div.alert {
+  &.notification {
+    background: $picnic-success;
+  }
+
+  &.error {
+    background: $picnic-error;
+  }
+
+  a {
+    color: black;
+    opacity: 0.3;
+    float: right;
+  }
+}
+
+form#add-task {
+  .button-container {
+    display: flex;
+  }
+
+  button[type=submit] {
+    margin: auto;
+  }
+}
+
+form.action {
+  display: inline;
+}

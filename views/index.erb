@@ -1,0 +1,44 @@
+<h2>ToDo</h2>
+
+<form id="add-task" method="POST" action="/tasks">
+  <div class="flex two">
+    <div>
+      <label>
+        Title:
+        <input name="task[title]" type="text">
+      </label>
+    </div>
+    <div>
+      <label>
+        Deadline:
+        <input name="task[deadline]" type="date">
+      </label>
+    </div>
+  </div>
+  <div class="flex four">
+    <div class="three-fourth">
+      <label>
+        Description:
+        <textarea name="task[description]"></textarea>
+      </label>
+    </div>
+    <div class="button-container">
+      <button type="submit" class="primary">Add Task</button>
+    </div>
+  </div>
+</form>
+
+<table class="tasks">
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Deadline</th>
+      <th>Done?</th>
+      <th>Actions</th>
+  </thead>
+  <tbody>
+  <% @tasks.each do |task| %>
+    <%= erb :task, {layout: false}, {task: task} %>
+  <% end %>
+  </tbody>
+</table>

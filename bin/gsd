@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require "bundler/setup"
+require_relative "../lib/gsd"
+
+GSD::App.run! do
+  system "yarn run browser-sync reload --port 3000"
+end
