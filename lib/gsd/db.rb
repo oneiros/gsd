@@ -23,6 +23,7 @@ module GSD
     def create_task(title, description, deadline, done)
       done = done ? 1 : 0
       @db.execute "INSERT INTO tasks(title, description, deadline, done) VALUES (?, ?, ?, ?)", title, description, deadline, done
+      @db.last_insert_row_id
     end
 
     def find_task(id)
