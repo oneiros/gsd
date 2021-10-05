@@ -16,23 +16,23 @@
       </div>
     </nav>
     <main>
-      <% if @notification %>
+      <% if (typeof(notification) != 'undefined') { %>
         <div class="alert notification card">
           <header>
-            <span><%= @notification %></span>
+            <span><%= notification %></span>
             <a href="#">&times;</a>
           </header>
         </div>
-      <% end %>
-      <% if @error %>
+      <% } %>
+      <% if (typeof(error) != 'undefined') { %>
         <div class="alert error card">
           <header>
-            <span><%= @error %></span>
+            <span><%= error %></span>
             <a href="#">&times;</a>
           </header>
         </div>
-      <% end %>
-      <%= yield %>
+      <% } %>
+      <%- body %>
     </main>
   </body>
 </html>

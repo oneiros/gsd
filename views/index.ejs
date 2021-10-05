@@ -37,8 +37,8 @@
       <th>Actions</th>
   </thead>
   <tbody>
-  <% @tasks.each do |task| %>
-    <%= erb :task, {layout: false}, {task: task} %>
-  <% end %>
+  <% tasks.forEach(function(task) { %>
+    <%- include('task', {task: task}) %>
+  <% }); %>
   </tbody>
 </table>

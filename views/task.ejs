@@ -1,0 +1,25 @@
+<tr class="task <% if (task.done) { %>is-done<% } %>">
+  <td class="task-title-description">
+    <span class="task-title"><%= task.title %></span>
+    <% if (task.description && task.description != "") { %>
+      <a href="#" class="more">(more)</a>
+      <p class="task-description"><%= task.description %></p>
+    <% } %>
+  </td>
+  <td class="deadline <% if (task.late()) { %>late<% } %>"><%= task.deadline %></td>
+  <td class="done">
+    <% if (task.done) { %>
+      ✓
+    <% } %>
+  </td>
+  <td class="actions">
+    <% if (!task.done) { %>
+      <form class="action" action="/tasks/<%= task.id %>/done?_method=PATCH" method="POST">
+        <button type="submit" class="success">Done!</button>
+      </form>
+    <% } %>
+    <form class="action" action="/tasks/<%= task.id %>?_method=DELETE" method="POST">
+      <button type="submit" class="error">Delete</button>
+    </form>
+  </td>
+</tr>

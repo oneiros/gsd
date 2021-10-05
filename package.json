@@ -1,22 +1,29 @@
 {
+  "name": "gsd",
+  "version": "0.2.0",
+  "private": true,
   "scripts": {
-    "start": "NODE_ENV=development webpack -d --watch --config ./webpack.config.js --color --display-error-details",
-    "build": "NODE_ENV=production webpack -p --config ./webpack.config.js --progress --color --display-error-details --bail"
+    "start": "nf start",
+    "server": "./bin/server",
+    "watch": "esbuild js/application.js --watch --bundle --outfile=public/javascripts/application.js"
   },
   "dependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
-    "babel-loader": "^8.0.6",
-    "browser-sync": "^2.26.7",
-    "browser-sync-webpack-plugin": "^2.2.2",
-    "css-loader": "^3.2.0",
-    "jquery": "^3.4.1",
-    "mini-css-extract-plugin": "^0.8.0",
-    "node-sass": "^4.12.0",
-    "picnic": "^6.5.1",
-    "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.0",
-    "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.9"
+    "browser-sync": "^2.27.5",
+    "cookie-parser": "^1.4.5",
+    "debug": "^4.3.2",
+    "ejs": "^3.1.6",
+    "esbuild": "^0.13.3",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.2",
+    "faker": "^5.5.3",
+    "foreman": "^3.0.1",
+    "http-errors": "^1.8.0",
+    "jquery": "^3.6.0",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "node-sass-middleware": "^0.11.0",
+    "picnic": "^6.5.5",
+    "sqlite3": "^5.0.2"
   }
 }

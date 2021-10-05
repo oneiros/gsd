@@ -1,2 +1,2 @@
-webpack: yarn start
-sinatra: bundle exec rerun --dir lib,views bin/gsd
+esbuild: npm run-script watch
+app: bin/server 
